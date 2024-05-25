@@ -4,6 +4,17 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Run server",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "args": ["--import=tsx/esm", "./src/server.ts"],
+      "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v20.10.0/bin/node",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Run current",
       "skipFiles": ["<node_internals>/**"],
       "cwd": "${workspaceFolder}",

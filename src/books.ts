@@ -106,7 +106,7 @@ const BOOKS = [
     description:
       'Get the most out of this foundational reference and improve the productivity of your software teams. This open access book collects the wisdom of the 2017 "Dagstuhl" seminar on productivity in software engineering, a meeting of community leaders, who came together with the goal of rethinking traditional definitions and measures of productivity.',
     website: "https://doi.org/10.1007/978-1-4842-4221-6",
-  }
+  },
 ];
 
 const authorsTmp = Object.fromEntries(BOOKS.map((book) => [book.author, true]));
@@ -121,4 +121,9 @@ const books = BOOKS.map((book, i) => {
   return d;
 });
 
-export const dataset = { authors, books };
+export const dataset = {
+  authors,
+  books,
+  authorsById: Object.fromEntries(authors.map((d) => [d.id, d])),
+  booksById: Object.fromEntries(books.map((d) => [(d as any).id, d])),
+};

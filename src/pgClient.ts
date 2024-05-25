@@ -13,12 +13,12 @@ const OPTIONS = {
 
 const poolClient = new Pool(OPTIONS);
 
-export async function getBooks() {
+export async function getBooks(ids: string[]) {
   const client = await poolClient.connect();
-  const result = await client.query("SELECT title FROM books WHERE isbn = $1", ["9781593279509"]);
+  const result = await client.query("SELECT title FROM books WHERE id = ANY ($1)", [ids]);
   client.release();
   return result.rows;
 }
 
-const res = await getBooks();
-console.log(res);
+// const res = await getBooks(["1", "2", "3"]);
+// console.log(res);

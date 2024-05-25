@@ -1,0 +1,23 @@
+
+-- Insert authors
+INSERT INTO authors (id, name) VALUES
+('0', 'Marijn Haverbeke'),
+('1', 'Nicolás Bevacqua'),
+('2', 'Nicholas C. Zakas'),
+('3', 'Axel Rauschmayer'),
+('4', 'Addy Osmani'),
+('5', 'Kyle Simpson'),
+('6', 'Scott Chacon and Ben Straub'),
+('7', 'Caitlin Sadowski, Thomas Zimmermann');
+
+-- Insert books
+INSERT INTO books (id, isbn, title, subtitle, author_id, published, publisher, pages, description, website) VALUES
+('0', '9781593279509', 'Eloquent JavaScript, Third Edition', 'A Modern Introduction to Programming', '0', '2018-12-04', 'No Starch Press', 472, 'JavaScript lies at the heart of almost every modern web application, from social apps like Twitter to browser-based game frameworks like Phaser and Babylon. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.', 'http://eloquentjavascript.net/'),
+('1', '9781491943533', 'Practical Modern JavaScript', 'Dive into ES6 and the Future of JavaScript', '1', '2017-07-16', 'O''Reilly Media', 334, 'To get the most out of modern JavaScript, you need learn the latest features of its parent specification, ECMAScript 6 (ES6). This book provides a highly practical look at ES6, without getting lost in the specification or its implementation details.', 'https://github.com/mjavascript/practical-modern-javascript'),
+('2', '9781593277574', 'Understanding ECMAScript 6', 'The Definitive Guide for JavaScript Developers', '2', '2016-09-03', 'No Starch Press', 352, 'ECMAScript 6 represents the biggest update to the core of JavaScript in the history of the language. In Understanding ECMAScript 6, expert developer Nicholas C. Zakas provides a complete guide to the object types, syntax, and other exciting changes that ECMAScript 6 brings to JavaScript.', 'https://leanpub.com/understandinges6/read'),
+('3', '9781449365035', 'Speaking JavaScript', 'An In-Depth Guide for Programmers', '3', '2014-04-08', 'O''Reilly Media', 460, 'Like it or not, JavaScript is everywhere these days -from browser to server to mobile- and now you, too, need to learn the language or dive deeper than you have. This concise book guides you into and through JavaScript, written by a veteran programmer who once found himself in the same position.', 'http://speakingjs.com/'),
+('4', '9781449331818', 'Learning JavaScript Design Patterns', 'A JavaScript and jQuery Developer''s Guide', '4', '2012-08-30', 'O''Reilly Media', 254, 'With Learning JavaScript Design Patterns, you''ll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you.', 'http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/'),
+('5', '9798602477429', 'You Don''t Know JS Yet', 'Get Started', '5', '2020-01-28', 'Independently published', 143, 'The worldwide best selling You Don''t Know JS book series is back for a 2nd edition: You Don''t Know JS Yet. All 6 books are brand new, rewritten to cover all sides of JS for 2020 and beyond.', 'https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed/get-started'),
+('6', '9781484200766', 'Pro Git', 'Everything you neeed to know about Git', '6', '2014-11-18', 'Apress; 2nd edition', 458, 'Pro Git (Second Edition) is your fully-updated guide to Git and its usage in the modern world. Git has come a long way since it was first developed by Linus Torvalds for Linux kernel development. It has taken the open source world by storm since its inception in 2005, and this book teaches you how to use it like a pro.', 'https://git-scm.com/book/en/v2'),
+('7', '9781484242216', 'Rethinking Productivity in Software Engineering', '', '7', '2019-05-11', 'Apress', 310, 'Get the most out of this foundational reference and improve the productivity of your software teams. This open access book collects the wisdom of the 2017 "Dagstuhl" seminar on productivity in software engineering, a meeting of community leaders, who came together with the goal of rethinking traditional definitions and measures of productivity.', 'https://doi.org/10.1007/978-1-4842-4221-6'),
+('8', '12234534', 'Software Engineering in Rethinking Productivity', '', '7', '2018-05-11', 'Apress', 234, 'Get the most out of this foundational reference and improve the productivity of your software teams. This open access book collects the wisdom of the 2017 "Dagstuhl" seminar on productivity in software engineering, a meeting of community leaders, who came together with the goal of rethinking traditional definitions and measures of productivity.', 'https://doi.org/10.1007/978-1-4842-4221-6'); 

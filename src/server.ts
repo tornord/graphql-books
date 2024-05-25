@@ -1,18 +1,16 @@
-import { resolve } from "node:path";
-
-import express, { NextFunction, Request, Response } from "express";
+import express from "express";
 import { makeExecutableSchema } from "@graphql-tools/schema";
 
-import { createSchema, createYoga } from "graphql-yoga";
-import { dataset } from "./books";
-import { getResolvers } from "./resolvers";
+import { createYoga } from "graphql-yoga";
+import { createJsonDataLoaders, createPostgresLoaders, getResolvers } from "./resolvers";
 import { typeDefinitions } from "./schema";
 
 const app = express();
 const PORT = 3000;
 
+const loaders = createJsonDataLoaders();
 const executableSchema = makeExecutableSchema({
-  resolvers: [getResolvers(dataset)],
+  resolvers: [getResolvers(loaders)],
   typeDefs: [typeDefinitions],
 });
 

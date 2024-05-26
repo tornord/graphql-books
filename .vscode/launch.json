@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run server",
+      "name": "Run server (Mac)",
       "skipFiles": ["<node_internals>/**"],
       "cwd": "${workspaceFolder}",
       "args": ["--import=tsx/esm", "./src/server.ts"],
@@ -15,13 +15,35 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run current",
+      "name": "Run current (Mac)",
       "skipFiles": ["<node_internals>/**"],
       "cwd": "${workspaceFolder}",
       "args": ["--import=tsx/esm", "${file}"],
       "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v20.10.0/bin/node",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run server (Windows)",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "args": ["--import=tsx/esm", "./src/server.ts"],
+      "runtimeExecutable": "${env:HOME}\\AppData\\Roaming\\nvm\\v20.10.0\\node",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run current (Windows)",
+      "skipFiles": ["<node_internals>/**"],
+      "cwd": "${workspaceFolder}",
+      "args": ["--import=tsx/esm", "${file}"],
+      "runtimeExecutable": "${env:HOME}\\AppData\\Roaming\\nvm\\v20.10.0\\node",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
   ]
 }

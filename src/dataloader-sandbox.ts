@@ -11,7 +11,7 @@ function bookBatch(keys: any) {
 
 async function main() {
   const bookLoader = new DataLoader(bookBatch, {
-    cache: true,
+    cache: false,
     batch: true,
   });
   

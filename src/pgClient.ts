@@ -1,6 +1,8 @@
 import pg from "pg";
 import "dotenv/config";
 
+import { Books } from "./resolvers";
+
 const { Pool } = pg;
 
 const OPTIONS = {
@@ -31,8 +33,9 @@ export async function getBooks(ids: null | string[] = null) {
   return result.rows;
 }
 
-export async function getBooksByAuthorId(authorIds: string[]) {
-  console.log("getBooksByAuthorId", authorIds?.join(", "), Date.now());
+// getBooksByAuthorIds - batchLoadFn
+export async function getBooksByAuthorIds(authorIds: string[]): Promise<Books[]> {
+  console.log("getBooksByAuthorIds", authorIds?.join(", "), Date.now());
   const client = await poolClient.connect();
   const result = await client.query("SELECT * FROM books WHERE author_id = ANY ($1)", [authorIds]);
   const resDict: { [id: string]: any } = {};
@@ -48,6 +51,18 @@ export async function getBooksByAuthorId(authorIds: string[]) {
   }
   return authorIds.map((id) => resDict[id] ?? []);
 }
+
+// getBooksByAuthorIdsGroupBy - batchLoadFn
+export async function getBooksByAuthorIdsGroupBy(authorIds: string[]): Promise<Books[]> {
+  console.log("getBooksByAuthorIds", authorIds?.join(", "), Date.now());
+  const client = await poolClient.connect();
+  const result = await client.query("SELECT * FROM books WHERE author_id = ANY ($1) GROUP BY(authorId)", [authorIds]);
+  const resDict: { [id: string]: any } = {};
+  client.release();
+  return result.rows;
+}
+
+
 
 export async function getAuthors(ids: null | string[] = null) {
   console.log("getAuthors", ids?.join(", "), Date.now());
@@ -65,5 +80,5 @@ export async function getAuthors(ids: null | string[] = null) {
   return result.rows;
 }
 
-// const res = await getBooksByAuthorId("1");
+// const res = await getBooksByAuthorIds("1");
 // console.log(res);

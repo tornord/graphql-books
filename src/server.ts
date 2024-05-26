@@ -8,7 +8,7 @@ import { typeDefinitions } from "./schema";
 const app = express();
 const PORT = 3000;
 
-const loaders = createJsonDataLoaders();
+const loaders = createPostgresLoaders();
 const executableSchema = makeExecutableSchema({
   resolvers: [getResolvers(loaders)],
   typeDefs: [typeDefinitions],
